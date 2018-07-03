@@ -1,0 +1,159 @@
+\documentclass{beamer}
+\usepackage{beamerthemeshadow}
+
+%\documentclass{article}
+%\usepackage{beamerarticle}
+%\usepackage{graphicx}
+
+\usepackage{verbatim}
+%\usepackage{lastpage}
+\usepackage{xcolor}
+\usepackage{pgf}
+\usepackage{colortbl}
+
+\newcommand{\bi}{\begin{itemize}}
+\newcommand{\ei}{\end{itemize}}
+\newcommand{\be}{\begin{enumerate}}
+\newcommand{\ee}{\end{enumerate}}
+\newcommand{\bd}{\begin{description}}
+\newcommand{\ed}{\end{description}}
+\newcommand{\prbf}[1]{\textbf{#1}}
+\newcommand{\prit}[1]{\textit{#1}}
+\newcommand{\beq}{\begin{equation}}
+\newcommand{\eeq}{\end{equation}}
+\newcommand{\bdm}{\begin{displaymath}}
+\newcommand{\edm}{\end{displaymath}}
+
+\newcommand{\ft}[1]{
+  \frametitle{\begin{tabular}{p{4.2in}r} \textcolor{white}{#1} & \small{\insertframenumber / \inserttotalframenumber} \end{tabular}}
+  %\frametitle{#1}
+  \setbeamercovered{transparent=18}
+}
+
+\newcommand{\stepinv}{\setbeamercovered{invisible}}
+\newcommand{\stopinv}{\setbeamercovered{transparent=18}}
+\newcommand{\uncoverinv}[1]
+{
+  \setbeamercovered{invisible}
+  \uncover<+->{#1}
+  \setbeamercovered{transparent=18}
+}
+\newcommand{\ans}[1]{\textcolor{blue}{#1}}
+\newcommand{\ansinv}[1]
+{
+  \setbeamercovered{invisible}
+  \uncover<+->{\textcolor{blue}{#1}}
+  \setbeamercovered{transparent=18}
+}
+\newcommand{\setinv}{\setbeamercovered{invisible}}
+\newcommand{\setvis}{\setbeamercovered{transparent=18}}
+\newcommand{\centerpic}[2]
+{
+  \begin{center}
+  \includegraphics[#1]{#2}
+  \end{center}
+}
+\newcommand{\h}[1]{\hat{#1}}
+\newcommand{\ds}{\displaystyle}
+
+%\definecolor{light}{rgb}{0.17,0.55,0.35}
+\newcommand{\hl}[1]{\alt<#1>{\rowcolor{light}\hspace*{-2.1pt}} {\hspace*{-2.1pt}} }
+
+\definecolor{mycolor}{rgb}{0.17,0.55,0.35}
+\usecolortheme[named=mycolor]{structure}
+
+\title[Discussion: Birkeland, Weinandt, and Carr]{Discussion of ``Student Outcomes in Principles: Online vs Face-to-face Delivery''}
+\subtitle{By Kathryn Birkeland, Mandie Weinandt, and David Carr}
+\author[James Murray, University of Wisconsin - La Crosse]{James Murray\\Department of Economics\\University of Wisconsin - La Crosse}
+\date{Saturday, March 31, 2012}
+
+\begin{document}
+
+\frame{\titlepage \setcounter{framenumber}{0}}
+
+\frame
+{
+  \ft{Summary}
+\bi
+\item Purpose: Measure the impact on academic performance from taking an economics principles online versus face-to-face.
+\item Important contribution: account for endogenous selection into online courses.
+  \bi
+  \item Control factors approach - compare simple t-tests with regression with a number of controls.
+  \item Identify selection factors - instrumental variables?
+  \ei
+\item Performance in online courses is not statistically significantly different from performance in face-to-face courses.
+\ei
+}
+
+\frame
+{
+  \ft{Strengths}
+  \bi
+  \item Informative literature review.
+    \bi
+    \item In the re-write, do not make focus a summary, speak to how literature motivates your question.
+    \item Might cite \textit{very recent} literature into how online teaching strategies have changed.  Makes case for answering your question again.
+    \ei
+  \item Nice experimental design
+    \bi
+    \item Same instructor, web-based homework, same lectures, same exams, closed-book exams under both formats.
+    \ei
+  \ei
+}
+
+\frame
+{
+  \ft{Instrumental Variables}
+  \bi
+  \item Two-stage least squares is an instrumental variables technique.  Be explicit.
+  \bdm y_i = \alpha e_i + x_i'\beta + \epsilon_i \edm
+  \item $y_i$ is outcome variable, $e_i$ is endogenous variable, correlated with $\epsilon_i$, $x_i$ are exogenous controls.
+  \item Decompose $e_i$ into exogenous and endogenous parts.
+  \bdm \begin{array}{c}
+       e_i = \gamma z_i + \upsilon_i \\ [0.5pc]
+       \hat{e}_i = \hat{\gamma}_i z_i \\ [0.5pc]
+       e_i = \hat{e}_i + \hat{\upsilon}_i 
+       \end{array} 
+  \edm
+  \item $z_i$ is a vector of instruments \textit{and} $x_t$, instruments are \textit{exogenous} variables that help explain $e_i$ (age, distance, previous experience).
+  \item $\hat{e}_i$ is exogenously explained choice to take online class, $\hat{\upsilon}_i$ contains the endogenous influence.
+  \ei
+}
+
+\frame
+{
+  \ft{Instrumental Variables}
+  \bi
+  \item Instrumental variable regression rarely looks pretty.
+  \item Tell a convincing story as to why instruments are exogenous.
+  \item Durbin-Wu-Hausman test for endogeneity:
+    \bi
+    \item Put residuals from first stage regression ($\upsilon_i$) into second stage.
+    \item If coefficient is significant = Endogeneity problem definitely needs to be addressed.
+    \ei
+  \item Test for exogeneity (only for over-identified models):
+    \bi
+    \item Regress residuals from second stage regression ($\epsilon_i$) on instruments.
+    \item Fail to reject F-test = Exogeneity.
+    \ei
+  \item Test for weak instruments: First stage - Partial F-test and $R^2$ on instruments.  Measures how well instruments explain endogenous variable.
+  \ei
+}
+
+\frame
+{
+  \ft{Odds and Ends}
+  \bi
+  \item Small sample size may be generating all the lack of significance.
+  \item Include dummy for USD student, this exclusion could cause endogeneity.
+  \item Because first stage is a probit, what you are doing is actually an MLE procedure.
+    \bi
+    \item Imposes assumptions of normality and homoskedasticity on error term.
+    \item Use a linear-probability model (simple OLS with dummy dependent variable) for true 2SLS
+    \ei
+  \item Check robustness across IV methods: 2SLS, MLE, GMM.
+  \ei
+}
+
+\end{document}
+

@@ -1,0 +1,165 @@
+\documentclass{beamer}
+\usepackage{beamerthemeshadow}
+
+%\documentclass{article}
+%\usepackage{beamerarticle}
+%\usepackage{graphicx}
+
+\usepackage{verbatim}
+%\usepackage{lastpage}
+\usepackage{xcolor}
+\usepackage{pgf}
+\usepackage{colortbl}
+
+\newcommand{\bi}{\begin{itemize}}
+\newcommand{\ei}{\end{itemize}}
+\newcommand{\be}{\begin{enumerate}}
+\newcommand{\ee}{\end{enumerate}}
+\newcommand{\bd}{\begin{description}}
+\newcommand{\ed}{\end{description}}
+\newcommand{\prbf}[1]{\textbf{#1}}
+\newcommand{\prit}[1]{\textit{#1}}
+\newcommand{\beq}{\begin{equation}}
+\newcommand{\eeq}{\end{equation}}
+\newcommand{\bdm}{\begin{displaymath}}
+\newcommand{\edm}{\end{displaymath}}
+
+\newcommand{\ft}[1]{
+  \frametitle{\begin{tabular}{p{4.2in}r} \textcolor{white}{#1} & \small{\insertframenumber / \inserttotalframenumber} \end{tabular}}
+  %\frametitle{#1}
+  \setbeamercovered{transparent=18}
+}
+
+\newcommand{\stepinv}{\setbeamercovered{invisible}}
+\newcommand{\stopinv}{\setbeamercovered{transparent=18}}
+\newcommand{\uncoverinv}[1]
+{
+  \setbeamercovered{invisible}
+  \uncover<+->{#1}
+  \setbeamercovered{transparent=18}
+}
+\newcommand{\ans}[1]{\textcolor{blue}{#1}}
+\newcommand{\ansinv}[1]
+{
+  \setbeamercovered{invisible}
+  \uncover<+->{\textcolor{blue}{#1}}
+  \setbeamercovered{transparent=18}
+}
+\newcommand{\setinv}{\setbeamercovered{invisible}}
+\newcommand{\setvis}{\setbeamercovered{transparent=18}}
+\newcommand{\centerpic}[2]
+{
+  \begin{center}
+  \includegraphics[#1]{#2}
+  \end{center}
+}
+\newcommand{\h}[1]{\hat{#1}}
+\newcommand{\ds}{\displaystyle}
+
+%\definecolor{light}{rgb}{0.17,0.55,0.35}
+\newcommand{\hl}[1]{\alt<#1>{\rowcolor{light}\hspace*{-2.1pt}} {\hspace*{-2.1pt}} }
+
+\definecolor{mycolor}{rgb}{0.17,0.55,0.35}
+\usecolortheme[named=mycolor]{structure}
+
+\title[Discussion: Plante and Traum]{Discussion of ``Time-varying Oil Price Volatility and Macroeconomic Aggregates: What Does Theory Say''}
+\subtitle{By Michael Plante and Nora Traum}
+\author[James Murray, University of Wisconsin - La Crosse]{James Murray\\Department of Economics\\University of Wisconsin - La Crosse}
+\date{Friday, March 18, 2011}
+
+\begin{document}
+
+\frame{\titlepage \setcounter{framenumber}{0}}
+
+\frame
+{
+  \ft{Summary}
+\bi
+\item Purpose: Expose the responses of consumer and producer decisions to an increase in oil price volatility.
+\item Put oil in the production function, discuss the effect of elasticity of complementarity/substitution for oil and other inputs in production.
+\item Put oil in the utility function along with durable goods, discuss the effect of elasticity of substitution between oil and durables.
+\item Reasonable calibrations: 
+  \bi
+  \item Investment and output rise in response to higher uncertainty.
+  \item Output falls only when focusing on durables (no capital).
+  \ei
+\ei
+}
+
+\frame
+{
+  \ft{Saving Supply Channel}
+  \bi
+  \item Increase in oil price uncertainty $\rightarrow$ increase in income uncertainty.
+  \item Risk averse consumers:
+    \bi
+    \item Increase precautionary savings (increase investment)
+    \item Decrease consumption
+    \item Increase labor?
+    \ei
+  \item Counter-intuitive result: increase in investment and output.
+  \ei
+}
+
+\frame
+{
+  \ft{Investment Demand Channel}
+  \bi
+  \item Not discussed in the paper, but it is evident from FOCs.
+  \item Increase in oil price uncertainty $\rightarrow$ increase in $MP_K$ uncertainty.
+  \item This increases uncertainty about future income stream ($r_{t+1} K_{t+1}$) from renting capital.
+  \item Risk averse behavior = decrease in investment.
+  \ei
+}
+
+\frame
+{
+  \ft{Flock to Capital in Times of Uncertainty}
+  \bi
+  \item Saving supply channel outweighs investment demand channel.
+  \item Model: little inherent risk to purchasing capital.
+    \bi
+    \item Only uncertainty about $r_{t+1}$.
+    \item Capital can still be costlessly be converted to consumption.
+    \ei
+  \item Make investment in capital risky.
+  \ei
+}
+
+\frame
+{
+  \ft{Irreversible Capital}
+  \begin{block}{Investment is Risky}
+    \bi
+    \item Capital can only be imperfectly (or not at all) converted to consumption 
+    \item Diminishes saving supply channel.
+    \item Investment demand falls, output falls.
+    \ei
+  \end{block}
+
+  \begin{block}{Literature}
+  \bi
+  \item Theory: Bernanke (QJE, 1983)
+  \item Statistical and economic significance: Chirinko and Schaller (JME, 2009)
+  \item Endogenous time-varying volatility of oil prices and irreversible investment in \textit{oil production}: Kogan, Livdan, and Yargon (Journal of Finance, 2009)
+  \ei
+  \end{block}
+}
+
+\frame
+{
+  \ft{Signal Extraction?}
+  \bi
+  \item Paper assumes a shock to the volatility of a shock is perfectly observable.
+  \item Hamilton's (1996) point?  
+    \bi
+    \item Decreases in oil prices were often ``market corrections.''  
+    \item These became signals of an increase in volatility.
+    \ei
+  \item Expectations constructed as they are, don't expect to match shape of empirical IRFs.
+  \item Perhaps this is another paper.
+  \ei
+}
+
+\end{document}
+

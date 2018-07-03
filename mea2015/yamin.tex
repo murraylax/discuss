@@ -1,0 +1,157 @@
+\documentclass{beamer}
+\usepackage{beamerthemeshadow}
+\usepackage{verbatim}
+
+\usepackage{lastpage}
+\usepackage{xcolor}
+\usepackage{pgf}
+\usepackage{colortbl}
+\usepackage{hyperref}
+
+\newcommand{\bi}{\begin{itemize}}
+\newcommand{\ei}{\end{itemize}}
+\newcommand{\be}{\begin{enumerate}}
+\newcommand{\ee}{\end{enumerate}}
+\newcommand{\bd}{\begin{description}}
+\newcommand{\ed}{\end{description}}
+\newcommand{\prbf}[1]{\textbf{#1}}
+\newcommand{\prit}[1]{\textit{#1}}
+\newcommand{\beq}{\begin{equation}}
+\newcommand{\eeq}{\end{equation}}
+\newcommand{\bdm}{\begin{displaymath}}
+\newcommand{\edm}{\end{displaymath}}
+
+\newcommand{\ft}[1]{
+  \frametitle{\begin{tabular}{p{4.2in}r} \textcolor{white}{#1} & \small{\insertframenumber / \inserttotalframenumber} \end{tabular}}
+  \setbeamercovered{transparent=18}
+}
+
+\newcommand{\eft}[1]{
+  \frametitle{\begin{tabular}{p{4in}r} \textcolor{white}{#1} & \small{\hyperlink{f:questions}{\beamergotobutton{GO BACK}}} \end{tabular}}
+  \setbeamercovered{transparent=18}
+}
+
+\newcommand{\stepinv}{\setbeamercovered{invisible}}
+\newcommand{\stopinv}{\setbeamercovered{transparent=18}}
+\newcommand{\uncoverinv}[1]
+{
+  \setbeamercovered{invisible}
+  \uncover<+->{#1}
+  \setbeamercovered{transparent=18}
+}
+\newcommand{\ans}[1]{\textcolor{blue}{#1}}
+\newcommand{\ansinv}[1]
+{
+  \setbeamercovered{invisible}
+  \uncover<+->{\textcolor{blue}{#1}}
+  \setbeamercovered{transparent=18}
+}
+\newcommand{\setinv}{\setbeamercovered{invisible}}
+\newcommand{\setvis}{\setbeamercovered{transparent=18}}
+\newcommand{\centerpic}[2]
+{
+  \begin{center}
+  \includegraphics[#1]{#2}
+  \end{center}
+}
+\newcommand{\h}[1]{\hat{#1}}
+\newcommand{\ds}{\displaystyle}
+
+%\definecolor{light}{rgb}{1.0,0.33,0.33}
+\definecolor{light}{rgb}{1.0,0.5,0.5}
+\newcommand{\hl}[1]{\alt<#1>{\rowcolor{light}\hspace*{-2.1pt}} {\hspace*{-2.1pt}} }
+
+\definecolor{mycolor}{rgb}{0.6,0.0,0.0}
+\usecolortheme[named=mycolor]{structure}
+
+\title[Discussion of Ahmad and Mykhaylova]{Discussion of\\ ``Explaining International Differences in Inflation Dynamics''}
+\subtitle{By Yamin Ahmad and Olena Mykhaylova}
+\author[James Murray, University of Wisconsin - La Crosse]{James Murray\\Department of Economics\\University of Wisconsin - La Crosse}
+\date{MEA 2015 Annual Meeting\\Minneapolis, MN\\~\\March 28, 2015}
+
+\begin{document}
+
+\frame{\titlepage \setcounter{framenumber}{0}}
+
+\frame
+{
+  \ft{General Impressions}
+
+  \begin{block}{Motivated and built up nicely}
+    \bi
+    \item Empirical evidence is convincing
+    \item Theoretically convincing with Phillips curve expressions
+    \item Compare simulation results with data 
+    \ei
+  \end{block}
+
+  \begin{block}{Outcomes}
+    \bi
+    \item LCPb (Local currency pricing in retail sector whose good is an aggregate of a traded (PCP) non-traded good): 
+      \bi \item High inflation persistence and low inflation volatility \ei
+    \item Price rigidity home and abroad:
+      \be
+      \item affects persistence and volatility
+      \item asymmetric Calvo stickiness can explain differences in persistence and volatility
+      \ee
+    \ei
+  \end{block}
+
+  \begin{block}{Quality contribution}
+    Destined for a quality journal
+  \end{block}
+}
+
+\frame
+{
+  \ft{International Explanations}
+  \begin{block}{Overwhelming}
+  \bi
+  \item Four open economy extensions... 
+  \item Plus... two types of LCP, closed/open, asymmetric population size, asymmetric price stickiness)
+  \item A lot of combinations considered.
+  \ei
+  \end{block}
+
+  \begin{block}{Open economy extensions}
+    \bi
+    \item \textit{Only LCP with retail sector (LCPb)} seems explain differences in inflation dynamics
+    \item Theoretical foundations suggest they can all play a role
+    \item Little differences and little discussion for the many other combinations considered.
+    \item What is significant about LCPa vs LCPb, in terms of inflation dynamics.
+    \item Is LCPb what sets developed vs developing countries apart?
+    \ei
+  \end{block}
+}
+
+\frame
+{
+  \ft{Matching is unconvincing}
+  \begin{block}{Developed countries}
+  \bi
+  \item Can't match persistence, but why should they?
+  \item With good reason, typical explanations are excluded.
+  \ei
+  \end{block}
+  
+  \begin{block}{Developing Countries}
+  \bi
+  \item Do a better job matching persistence; volatility less so
+  \item Differences in policy targets and persistence are excluded.
+  \item Asymmetric Calvo stickiness is unsatisfying, misaligned with paper's purpose.
+  \item DSGE is calibrated to a developed country.
+  \ei
+  \end{block}
+  
+  \begin{block}{``Matching'' is too ambitious}
+  \bi
+  \item Does not align with the purpose of the paper.
+  \item More metrics on explanatory power of international dimensions.
+  \ei
+  \end{block}
+}
+
+
+
+\end{document}
+

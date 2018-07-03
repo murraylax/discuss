@@ -1,0 +1,152 @@
+\documentclass{beamer}
+\usepackage{beamerthemeshadow}
+\usepackage{verbatim}
+
+\usepackage{lastpage}
+\usepackage{xcolor}
+\usepackage{pgf}
+\usepackage{colortbl}
+\usepackage{hyperref}
+\usepackage{multirow}
+\usepackage{dsfont}
+\usepackage{graphbox}
+
+\newenvironment{benumerate}[1]{
+  \let\oldItem\item
+  \def\item{\addtocounter{enumi}{-2}\oldItem}
+  \begin{enumerate}
+    \setcounter{enumi}{#1}
+    \addtocounter{enumi}{1}
+}{\end{enumerate}}
+                 
+
+\usepackage{siunitx}
+\sisetup{input-symbols=(), group-digits  = false} 
+
+\newcommand{\bi}{\begin{itemize}}
+\newcommand{\ei}{\end{itemize}}
+\newcommand{\be}{\begin{enumerate}}
+\newcommand{\ee}{\end{enumerate}}
+\newcommand{\bd}{\begin{description}}
+\newcommand{\ed}{\end{description}}
+\newcommand{\prbf}[1]{\textbf{#1}}
+\newcommand{\prit}[1]{\textit{#1}}
+\newcommand{\beq}{\begin{equation}}
+\newcommand{\eeq}{\end{equation}}
+\newcommand{\bdm}{\begin{displaymath}}
+\newcommand{\edm}{\end{displaymath}}
+
+\newcommand{\ft}[1]{
+  \frametitle{\begin{tabular}{p{4.2in}r} \textcolor{white}{#1} & \small{\insertframenumber / \inserttotalframenumber} \end{tabular}}
+  \setbeamercovered{transparent=18}
+}
+
+\newcommand{\eft}[1]{
+  \frametitle{\begin{tabular}{p{4in}r} \textcolor{white}{#1} & \small{\hyperlink{f:questions}{\beamergotobutton{GO BACK}}} \end{tabular}}
+  \setbeamercovered{transparent=18}
+}
+
+\newcommand{\stepinv}{\setbeamercovered{invisible}}
+\newcommand{\stopinv}{\setbeamercovered{transparent=18}}
+\newcommand{\uncoverinv}[1]
+{
+  \setbeamercovered{invisible}
+  \uncover<+->{#1}
+  \setbeamercovered{transparent=18}
+}
+\newcommand{\ans}[1]{\textcolor{blue}{#1}}
+\newcommand{\ansinv}[1]
+{
+  \setbeamercovered{invisible}
+  \uncover<+->{\textcolor{blue}{#1}}
+  \setbeamercovered{transparent=18}
+}
+\newcommand{\setinv}{\setbeamercovered{invisible}}
+\newcommand{\setvis}{\setbeamercovered{transparent=18}}
+\newcommand{\centerpic}[2]
+{
+  \begin{center}
+  \includegraphics[#1]{#2}
+  \end{center}
+}
+\newcommand{\h}[1]{\hat{#1}}
+\newcommand{\ds}{\displaystyle}
+
+\definecolor{light}{rgb}{1.0,0.7,0.7}
+\definecolor{BrickRed}{rgb}{0.8,0.1,0.1}
+%\definecolor{light}{rgb}{1.0,0.5,0.5}
+%\newcommand{\hl}[1]{\only<#1>{\cellcolor{BrickRed}}}
+\newcommand{\hl}[1]{\textcolor<#1>{BrickRed}}
+
+\definecolor{mycolor}{rgb}{1.0,0.23,0.13}
+\usecolortheme[named=mycolor]{structure}
+
+\title[Discussion for SEA: Vazquez-Cognet et al.]{Discussion: Can we Stay One Step Ahead of Online Cheaters?}
+\subtitle{Paper By: Jose Vazquez-Cognet, Ignacio Sarmiento-Barbieri, and Timothy Chin}
+\author[James M. Murray, University of Wisconsin - La Crosse]{
+  Discussant:\\
+  James M. Murray, Ph.D.\\
+  University of Wisconsin - La Crosse
+}
+
+\date{
+  \small{
+    November 18, 2017\\
+  \ \\
+  Southern Economic Association\\
+  2017 Annual Conference
+  }
+}
+\begin{document}
+
+\frame{\titlepage \setcounter{framenumber}{0}}
+
+\frame{
+  \ft{Econometric Model}
+  \uncover<+->{
+  \begin{block}{Well Done and Thought Out} 
+    \bi
+    \item Randomized treatment for both online and face-to-face
+    \item Accounts for differences in gender, ACT score, year-in-school, interacts these with proctoring
+    \item Lack of differences in online section: magnitudes are small and precisely estimated
+    \ei
+  \end{block}}
+
+  \uncover<+->{
+  \begin{block}{Suggestions}
+    \bi
+    \item Is test anxiety really independent of F2F vs online (accelerated term) decision?
+    \item ``Optimal cheating'' w/r to student: Does previous exam performance influence cheating decision?
+      \bi
+      \item You do see more cheating in later exams. Interact this with previous performance.
+      \ei
+    \ei
+  \end{block} }
+}
+
+\frame{
+  \ft{Impact of Cheating?}
+  \uncover<+->{
+  \begin{block}{Important for Understanding ``Optimal Cheating''}
+  \bi
+  \item Does cheating improve long-run retention?
+  \item Are the students cheating themselves?
+    \ei
+  \end{block}}
+
+  \uncover<+->{
+    \begin{block}{Suggested Strategy}
+      \bi
+      \item Treatment: All midterm exams are proctored
+      \item Control: None of midterm exams are proctored
+      \item Final exam: All exams are proctored for treatment \& control
+      \item Estimate immediate effects of treatment like you do
+      \item Estimate effects on final exam
+        \ei
+    \end{block}
+  }
+}
+
+
+\end{document}
+

@@ -1,0 +1,125 @@
+\documentclass{beamer}
+\usepackage{beamerthemeshadow}
+
+%\documentclass{article}
+%\usepackage{beamerarticle}
+%\usepackage{graphicx}
+
+\usepackage{verbatim}
+%\usepackage{lastpage}
+\usepackage{xcolor}
+\usepackage{pgf}
+\usepackage{colortbl}
+\usepackage{hyperref}
+
+\newcommand{\bi}{\begin{itemize}}
+\newcommand{\ei}{\end{itemize}}
+\newcommand{\be}{\begin{enumerate}}
+\newcommand{\ee}{\end{enumerate}}
+\newcommand{\bd}{\begin{description}}
+\newcommand{\ed}{\end{description}}
+\newcommand{\prbf}[1]{\textbf{#1}}
+\newcommand{\prit}[1]{\textit{#1}}
+\newcommand{\beq}{\begin{equation}}
+\newcommand{\eeq}{\end{equation}}
+\newcommand{\bdm}{\begin{displaymath}}
+\newcommand{\edm}{\end{displaymath}}
+
+\newcommand{\ft}[1]{
+  \frametitle{\begin{tabular}{p{4.2in}r} \textcolor{white}{#1} & \small{\insertframenumber / \inserttotalframenumber} \end{tabular}}
+  %\frametitle{#1}
+  \setbeamercovered{transparent=18}
+}
+
+\newcommand{\stepinv}{\setbeamercovered{invisible}}
+\newcommand{\stopinv}{\setbeamercovered{transparent=18}}
+\newcommand{\uncoverinv}[1]
+{
+  \setbeamercovered{invisible}
+  \uncover<+->{#1}
+  \setbeamercovered{transparent=18}
+}
+\newcommand{\ans}[1]{\textcolor{blue}{#1}}
+\newcommand{\ansinv}[1]
+{
+  \setbeamercovered{invisible}
+  \uncover<+->{\textcolor{blue}{#1}}
+  \setbeamercovered{transparent=18}
+}
+\newcommand{\setinv}{\setbeamercovered{invisible}}
+\newcommand{\setvis}{\setbeamercovered{transparent=18}}
+\newcommand{\centerpic}[2]
+{
+  \begin{center}
+  \includegraphics[#1]{#2}
+  \end{center}
+}
+\newcommand{\h}[1]{\hat{#1}}
+\newcommand{\ds}{\displaystyle}
+
+%\definecolor{light}{rgb}{0.17,0.55,0.35}
+\newcommand{\hl}[1]{\alt<#1>{\rowcolor{light}\hspace*{-2.1pt}} {\hspace*{-2.1pt}} }
+
+\definecolor{mycolor}{rgb}{0.17,0.55,0.35}
+\usecolortheme[named=mycolor]{structure}
+
+\title[Discussion: Roberts, et. al. (2013)]{Discussion of ``Lesson Study: Teaching Economics Life Skills with Student Activities''}
+\subtitle{By Helen Roberts, Joy Joyce, Carlos Villarreal, and Luis Guillermo Serpa}
+\author[James Murray, University of Wisconsin - La Crosse]{James Murray\\Department of Economics\\University of Wisconsin - La Crosse}
+\date{Thursday, May 30, 2013}
+
+\begin{document}
+
+\frame{\titlepage \setcounter{framenumber}{0}}
+
+\frame
+{
+  \ft{Overall Impressions}
+  \bi
+  \item Authors document lessons that are part of a very worthwhile cause.
+  \item Are these programs and/or lessons ongoing?
+  \item Have you collected data on students' learning and preexisting knowledge?
+  \item Do improvements in financial literacy improve behavior?  Maybe cite something here.
+  \item Did you submit any of these lessons to \textcolor{blue}{\href{http://serc.carleton.edu/econ/}{Starting Point}} (\textcolor{blue}{\href{http://serc.carleton.edu/econ/}{http://serc.carleton.edu/econ/}})?
+  \ei
+}
+
+\frame
+{
+  \ft{Collect Evidence on Learning}
+  \begin{block}{Motivate it with some data.}
+    \bi
+    \item Pre-test with students.
+    \item Focus group conversations with students on the first day.
+    \item Indirect assessment: student survey.
+    \ei
+  \end{block}
+
+  \begin{block}{Gather Data on Student Learning}
+    \bi
+    \item Direct assessment measure: rubrics aligned with goals of the lessons.
+    \item Classroom observations using a classroom observation guide.
+    \item Indirect assessment: post-lesson survey
+      \bi
+      \item Open ended: What was the most interesting thing you learned in the lesson?
+      \item Students could evaluate their own learning on the goals.
+      \item You could ask students about their own plans, behaviors.
+      \ei
+    \ei
+  \end{block}
+}
+
+\frame
+{
+  \ft{What to look for in the data?}
+ 
+    \bi
+    \item Is this lesson ``effective?''  I don't care.
+    \item With what concepts did students demonstrate the most growth?
+    \item What concepts remain challenging?
+    \ei
+
+}
+
+\end{document}
+

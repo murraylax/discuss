@@ -1,0 +1,118 @@
+\documentclass{beamer}
+\usepackage{beamerthemeshadow}
+%\usepackage{beamercolorthemedolphin}
+\usepackage{lastpage}
+
+\usepackage{xcolor}
+\usepackage{pgf}
+
+\newcommand{\bi}{\begin{itemize}}
+\newcommand{\ei}{\end{itemize}}
+\newcommand{\be}{\begin{enumerate}}
+\newcommand{\ee}{\end{enumerate}}
+\newcommand{\bd}{\begin{description}}
+\newcommand{\ed}{\end{description}}
+\newcommand{\prbf}[1]{\textbf{#1}}
+\newcommand{\prit}[1]{\textit{#1}}
+\newcommand{\beq}{\begin{equation}}
+\newcommand{\eeq}{\end{equation}}
+\newcommand{\bdm}{\begin{displaymath}}
+\newcommand{\edm}{\end{displaymath}}
+
+\newcommand{\ft}[1]{
+  \frametitle{\begin{tabular}{p{4in}r} \textcolor{white}{#1} & \small{\textcolor{white}{\thepage$~$ / \pageref{LastPage}}}\end{tabular}}
+  \setbeamercovered{transparent=18}
+}
+
+\newcommand{\stepinv}{\setbeamercovered{invisible}}
+\newcommand{\stopinv}{\setbeamercovered{transparent=18}}
+\newcommand{\uncoverinv}[1]
+{
+  \setbeamercovered{invisible}
+  \uncover<+->{#1}
+  \setbeamercovered{transparent=18}
+}
+\newcommand{\ans}[1]{\textcolor{blue}{#1}}
+\newcommand{\ansinv}[1]
+{
+  \setbeamercovered{invisible}
+  \uncover<+->{\textcolor{blue}{#1}}
+  \setbeamercovered{transparent=18}
+}
+\newcommand{\setinv}{\setbeamercovered{invisible}}
+\newcommand{\setvis}{\setbeamercovered{transparent=18}}
+\newcommand{\centerpic}[2]
+{
+  \begin{center}
+  \includegraphics[#1]{#2}
+  \end{center}
+}
+\newcommand{\h}[1]{\hat{#1}}
+\newcommand{\ds}{\displaystyle}
+
+\definecolor{mycolor}{rgb}{0.125,0.5,0.05}
+\usecolortheme[named=mycolor]{structure}
+
+\title[Discussion of ``Feasibility from a Land Use Perspective'']{Discussion of ``Feasibility of Corn and Ethanol from a Land Use Perspective'' by Andrew Allaby}
+\author[Jordan River Conference. Indiana University. April 2007.]{James Murray}
+\date{April 20, 2007}
+
+\begin{document}
+
+\frame{\titlepage}
+\setcounter{page}{1}
+
+\frame
+{
+  \ft{Informative Aspects}
+  \bi
+  \item Cites how improvements in ethanol technology may increase ethanol yield per bushel of corn.
+    \bi
+    \item High starch variants of corn.  Makes bad food, good ethanol output.
+    \item Distilling technology.
+    \ei  
+  \item Primary focus: increase in land dedicated to corn.
+    \bi
+    \item Acres currently used for competing crops.
+    \item Discusses yield drops.
+    \item Acres currently under Conservation Reserve Program.
+    \ei
+  \ei
+}
+
+\frame
+{
+  \ft{Linear trends}
+  \bi
+  \item Linear upward trend corn crop yield may not be appropriate for 2016 forecast.
+    \bi
+    \item It has been nearly linear since 1940.
+    \item Last 30 years has seen increased volatility.
+    \item Crops dedicated to ethanol use different variety of corn.
+    \ei
+  \item Linear upward trend in ethanol yield not likely.
+    \bi
+    \item Pimental (1998), Graboski (2001): very different estimates for net energy balance.
+    \item High demand for ethanol, high corn prices, should induce R\&D.
+    \ei
+  \ei
+}
+
+\frame
+{
+  \ft{Economics Issues}
+  \bi
+  \item Assumes the price of corn will remain constant.
+    \bi
+    \item Federal programs may encourage ethanol usage.
+    \ei
+  \item Lacking economic explanations:
+    \bi
+    \item Why will the U.S. be demanding 35 billion gallons of ethanol?
+    \item What economic incentives will Federal programs provide for ethanol usage and/or production?
+    \item How will consumers and farmers react to these changing incentives?
+    \ei
+  \ei
+}
+
+\end{document}

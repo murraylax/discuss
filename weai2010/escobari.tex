@@ -1,0 +1,138 @@
+\documentclass{beamer}
+\usepackage{beamerthemeshadow}
+\usepackage{verbatim}
+
+\usepackage{lastpage}
+\usepackage{xcolor}
+\usepackage{pgf}
+\usepackage{colortbl}
+\usepackage{hyperref}
+
+\newcommand{\bi}{\begin{itemize}}
+\newcommand{\ei}{\end{itemize}}
+\newcommand{\be}{\begin{enumerate}}
+\newcommand{\ee}{\end{enumerate}}
+\newcommand{\bd}{\begin{description}}
+\newcommand{\ed}{\end{description}}
+\newcommand{\prbf}[1]{\textbf{#1}}
+\newcommand{\prit}[1]{\textit{#1}}
+\newcommand{\beq}{\begin{equation}}
+\newcommand{\eeq}{\end{equation}}
+\newcommand{\bdm}{\begin{displaymath}}
+\newcommand{\edm}{\end{displaymath}}
+
+\newcommand{\ft}[1]{
+  \frametitle{\begin{tabular}{p{4.2in}r} \textcolor{white}{#1} & \small{\insertframenumber / \inserttotalframenumber} \end{tabular}}
+  \setbeamercovered{transparent=18}
+}
+
+\newcommand{\eft}[1]{
+  \frametitle{\begin{tabular}{p{4in}r} \textcolor{white}{#1} & \small{\hyperlink{f:questions}{\beamergotobutton{GO BACK}}} \end{tabular}}
+  \setbeamercovered{transparent=18}
+}
+
+\newcommand{\stepinv}{\setbeamercovered{invisible}}
+\newcommand{\stopinv}{\setbeamercovered{transparent=18}}
+\newcommand{\uncoverinv}[1]
+{
+  \setbeamercovered{invisible}
+  \uncover<+->{#1}
+  \setbeamercovered{transparent=18}
+}
+\newcommand{\ans}[1]{\textcolor{blue}{#1}}
+\newcommand{\ansinv}[1]
+{
+  \setbeamercovered{invisible}
+  \uncover<+->{\textcolor{blue}{#1}}
+  \setbeamercovered{transparent=18}
+}
+\newcommand{\setinv}{\setbeamercovered{invisible}}
+\newcommand{\setvis}{\setbeamercovered{transparent=18}}
+\newcommand{\centerpic}[2]
+{
+  \begin{center}
+  \includegraphics[#1]{#2}
+  \end{center}
+}
+\newcommand{\h}[1]{\hat{#1}}
+\newcommand{\ds}{\displaystyle}
+
+%\definecolor{light}{rgb}{1.0,0.33,0.33}
+\definecolor{light}{rgb}{1.0,0.5,0.5}
+\newcommand{\hl}[1]{\alt<#1>{\rowcolor{light}\hspace*{-2.1pt}} {\hspace*{-2.1pt}} }
+
+\definecolor{mycolor}{rgb}{0.6,0.0,0.0}
+\usecolortheme[named=mycolor]{structure}
+
+\title[Discussion of Escobari: Stochastic Peak-Load Pricing]{WEAI Discussion of Escobari (2010):}
+\subtitle{Stochastic Peak-Load Pricing and Aggregate Demand Learning in Airlines}
+\author[James Murray, University of Wisconsin - La Crosse]{James Murray\\Department of Economics\\University of Wisconsin - La Crosse}
+\date{July 1, 2010}
+
+\begin{document}
+
+\frame{\titlepage \setcounter{framenumber}{0}}
+
+\frame
+{
+  \ft{Compliments}
+  \bi
+  \item Provide a great overview of the literature that motivates the present work.
+  \item Explain well the complexity surrounding airline pricing.
+  \item Econometric methodology:
+    \bi
+    \item Seems to be well motivated by literature - current practices.
+    \item I like the threshold model.
+    \item Identify a signal, $S_{ijt}$, that informs whether a flight is likely to be ``peak'' or ``off-peak''.
+    \item Take care to account for endogeneity in days in advance, and load.
+    \ei
+  \item Paper seems to be well polished, ready for submission.
+  \ei
+}
+
+\frame
+{
+  \ft{Figure 2: Bottom Panel}
+  \begin{columns}
+    \column{1.5in}
+    \bi
+    \item No ``booking curve'' yet.
+    \item It's not obvious what this should be.
+    \item Keep the figure, but admit it isn't obvious.  This motivates your work.
+    \ei
+    \column{2.5in}
+    \centerpic{scale=0.2}{diego.png}
+  \end{columns}
+}
+
+\frame
+{
+  \ft{Critical Reactions}
+  \bi
+  \item Econometric modeling:
+    \bi
+    \item Why does the signal only impact the coefficient on load?
+    \item What dynamics are you explaining over-and-above a simple model?
+    \item Is there a priori evidence of switching coefficients in these regressions?
+    \ei
+  \item Why is this learning?
+    \bi
+    \item With learning, uncertainty decreases as time progresses (flight time approaches).
+    \item With learning, expectations (booking curve?) react to past signals.
+    \item You might capture some of these dynamics with interaction of signal on load.
+    \ei
+  \ei
+}
+
+\frame
+{
+  \ft{Final reactions}
+  \bi
+  \item Motivation for someone not familiar with the literature is not convincing.
+  \item I don't get a sense as to whether airlines are behaving optimally.
+  \item Statistical evidence that signal causes switches in coefficients on price discrimination characteristics?
+  \ei
+}
+
+\end{document}
+

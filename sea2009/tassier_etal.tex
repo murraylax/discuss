@@ -1,0 +1,154 @@
+\documentclass{beamer}
+\usepackage{beamerthemeshadow}
+\usepackage{verbatim}
+
+\usepackage{lastpage}
+\usepackage{xcolor}
+\usepackage{pgf}
+\usepackage{colortbl}
+\usepackage{hyperref}
+
+\newcommand{\bi}{\begin{itemize}}
+\newcommand{\ei}{\end{itemize}}
+\newcommand{\be}{\begin{enumerate}}
+\newcommand{\ee}{\end{enumerate}}
+\newcommand{\bd}{\begin{description}}
+\newcommand{\ed}{\end{description}}
+\newcommand{\prbf}[1]{\textbf{#1}}
+\newcommand{\prit}[1]{\textit{#1}}
+\newcommand{\beq}{\begin{equation}}
+\newcommand{\eeq}{\end{equation}}
+\newcommand{\bdm}{\begin{displaymath}}
+\newcommand{\edm}{\end{displaymath}}
+
+\newcommand{\ft}[1]{
+  \frametitle{\begin{tabular}{p{4.2in}r} \textcolor{white}{#1} & \small{\insertframenumber / \inserttotalframenumber} \end{tabular}}
+  \setbeamercovered{transparent=18}
+}
+
+\newcommand{\eft}[1]{
+  \frametitle{\begin{tabular}{p{4in}r} \textcolor{white}{#1} & \small{\hyperlink{f:questions}{\beamergotobutton{GO BACK}}} \end{tabular}}
+  \setbeamercovered{transparent=18}
+}
+
+\newcommand{\stepinv}{\setbeamercovered{invisible}}
+\newcommand{\stopinv}{\setbeamercovered{transparent=18}}
+\newcommand{\uncoverinv}[1]
+{
+  \setbeamercovered{invisible}
+  \uncover<+->{#1}
+  \setbeamercovered{transparent=18}
+}
+\newcommand{\ans}[1]{\textcolor{blue}{#1}}
+\newcommand{\ansinv}[1]
+{
+  \setbeamercovered{invisible}
+  \uncover<+->{\textcolor{blue}{#1}}
+  \setbeamercovered{transparent=18}
+}
+\newcommand{\setinv}{\setbeamercovered{invisible}}
+\newcommand{\setvis}{\setbeamercovered{transparent=18}}
+\newcommand{\centerpic}[2]
+{
+  \begin{center}
+  \includegraphics[#1]{#2}
+  \end{center}
+}
+\newcommand{\h}[1]{\hat{#1}}
+\newcommand{\ds}{\displaystyle}
+
+%\definecolor{light}{rgb}{1.0,0.33,0.33}
+\definecolor{light}{rgb}{1.0,0.5,0.5}
+\newcommand{\hl}[1]{\alt<#1>{\rowcolor{light}\hspace*{-2.1pt}} {\hspace*{-2.1pt}} }
+
+\definecolor{mycolor}{rgb}{0.6,0.0,0.0}
+\usecolortheme[named=mycolor]{structure}
+
+\title[Discussion: Targeted Vaccine for Healthcare Workers]{Discussion: Targeted Vaccine Subsidies for Healthcare Workers}
+\subtitle{By T. Tasseir, P. Polgreen, and A. Segre}
+\author[James Murray, University of Wisconsin - La Crosse]{James Murray\\Department of Economics\\University of Wisconsin - La Crosse}
+\date{November 21, 2009}
+
+\begin{document}
+
+\frame{\titlepage \setcounter{framenumber}{0}}
+
+\frame
+{
+  \ft{Summary}
+  \begin{block}{Susceptible-Infected-Recovered (SIR) Model}
+  \bi
+  \item<+-> Extended for heterogeneous contact:
+  \item<+-> Possible disconnect in Prob(infected) and Marginal Infections.
+  \item<+-> Vaccination: low private benefit, but high social benefit.
+  \ei
+  \end{block}
+
+  \begin{block}{Model Simulation}
+  \bi
+  \item<+-> Collected contact data on 140 workers in 16 different roles in hospital.
+  \item<+-> Used averages to calibrate contact frequency heterogeneity.
+  \item<+-> Found simulations for marginal infections, expected marginal infections. 
+  \item<+-> Some expected and surprising results extremely relevant for H1N1 policy.
+  \item<+-> What is a unit clerk?  
+  \ei
+  \end{block}
+}
+
+\frame
+{
+  \ft{General Population}
+  \bi
+  \item<+-> ``General Population'' refers to population of hospital workers / patients.
+  \item<+-> Protecting patient population is probably most crucial in protecting general population.
+  \item<+-> Patients could be your agent $j$ connecting:
+    \bi
+    \item<+-> Group A: Hospital employees.
+    \item<+-> Group B: Actual general population.
+    \item<+-> Possibly have much higher marginal infections (in general population)
+    \ei
+  \item<+-> Use a term ``Hospital Population'' and tone down its importance.
+  \ei
+}
+
+\frame
+{
+  \ft{Statistics}
+  \bi
+  \item<+-> There are no standard deviations / confidence intervals / hypothesis tests.
+  \item<+-> Table 1 shows average contacts between worker categories.
+  \item<+-> These means have standard deviations, normal sampling distributions.
+  \item<+-> Monte-Carlo simulation:
+    \be
+    \item<+-> Draw a sample from sampling distributions Table 1.
+    \item<+-> Generate results of marginal infections 
+    \item<+-> Repeat a couple million times.
+    \ee
+  \item<+-> Result: means and standard deviations for results in Tables 3,4,6,7.
+  \ei
+}
+
+\frame
+{
+  \ft{Transmission Probability}
+  \bi
+  \item<+-> Transmission probability, $\alpha$, identical across groups and contact types.
+  \item<+-> Data was collected on:
+    \be
+    \item<.-> Length of contact time.
+    \item<.-> Whether physical contact was made.
+    \item<.-> Whether hand washing / sanitizing was done.
+    \ee
+  \item<+-> Maybe summarize this data in a Matrix like Table 1.
+  \item<+-> Might provide clues:
+    \bi
+    \item<+-> Is transmission rate independent of group and contact type?
+    \item<+-> Is transmission rate lower around patients?
+    \item<+-> Are certain groups' transmission rates different around patients?
+    \ei
+  \ei
+}
+
+
+\end{document}
+

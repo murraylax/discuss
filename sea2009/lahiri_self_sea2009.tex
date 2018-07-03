@@ -1,0 +1,152 @@
+\documentclass{beamer}
+\usepackage{beamerthemeshadow}
+\usepackage{verbatim}
+
+\usepackage{lastpage}
+\usepackage{xcolor}
+\usepackage{pgf}
+\usepackage{colortbl}
+\usepackage{hyperref}
+
+\newcommand{\bi}{\begin{itemize}}
+\newcommand{\ei}{\end{itemize}}
+\newcommand{\be}{\begin{enumerate}}
+\newcommand{\ee}{\end{enumerate}}
+\newcommand{\bd}{\begin{description}}
+\newcommand{\ed}{\end{description}}
+\newcommand{\prbf}[1]{\textbf{#1}}
+\newcommand{\prit}[1]{\textit{#1}}
+\newcommand{\beq}{\begin{equation}}
+\newcommand{\eeq}{\end{equation}}
+\newcommand{\bdm}{\begin{displaymath}}
+\newcommand{\edm}{\end{displaymath}}
+
+\newcommand{\ft}[1]{
+  \frametitle{\begin{tabular}{p{4.2in}r} \textcolor{white}{#1} & \small{\insertframenumber / \inserttotalframenumber} \end{tabular}}
+  \setbeamercovered{transparent=18}
+}
+
+\newcommand{\eft}[1]{
+  \frametitle{\begin{tabular}{p{4in}r} \textcolor{white}{#1} & \small{\hyperlink{f:questions}{\beamergotobutton{GO BACK}}} \end{tabular}}
+  \setbeamercovered{transparent=18}
+}
+
+\newcommand{\stepinv}{\setbeamercovered{invisible}}
+\newcommand{\stopinv}{\setbeamercovered{transparent=18}}
+\newcommand{\uncoverinv}[1]
+{
+  \setbeamercovered{invisible}
+  \uncover<+->{#1}
+  \setbeamercovered{transparent=18}
+}
+\newcommand{\ans}[1]{\textcolor{blue}{#1}}
+\newcommand{\ansinv}[1]
+{
+  \setbeamercovered{invisible}
+  \uncover<+->{\textcolor{blue}{#1}}
+  \setbeamercovered{transparent=18}
+}
+\newcommand{\setinv}{\setbeamercovered{invisible}}
+\newcommand{\setvis}{\setbeamercovered{transparent=18}}
+\newcommand{\centerpic}[2]
+{
+  \begin{center}
+  \includegraphics[#1]{#2}
+  \end{center}
+}
+\newcommand{\h}[1]{\hat{#1}}
+\newcommand{\ds}{\displaystyle}
+
+%\definecolor{light}{rgb}{1.0,0.33,0.33}
+\definecolor{light}{rgb}{1.0,0.5,0.5}
+\newcommand{\hl}[1]{\alt<#1>{\rowcolor{light}\hspace*{-2.1pt}} {\hspace*{-2.1pt}} }
+
+\definecolor{mycolor}{rgb}{0.6,0.0,0.0}
+\usecolortheme[named=mycolor]{structure}
+
+\title[Discussion: Gender Differences in Healthcare Provisions]{Discussion: Gender Differences in Healthcare Provisions for Children}
+\subtitle{By Sajal Lahiri and Sharmistha Self}
+\author[James Murray, University of Wisconsin - La Crosse]{James Murray\\Department of Economics\\University of Wisconsin - La Crosse}
+\date{November 22, 2009}
+
+\begin{document}
+
+\frame{\titlepage \setcounter{framenumber}{0}}
+
+\frame
+{
+  \ft{Summary}
+  \uncover<+->{
+  \begin{block}{Gender bias issue} 
+  Choice of a head of household to seek different levels of health care for daughters versus sons.
+  \end{block}
+  }
+
+  \uncover<+->{
+  \begin{block}{Suggested Findings}
+  \bi
+  \item<+-> Bias occurs via health care costs.
+  \item<+-> Bias occurs even in the absence of costs (inherent bias).
+  \item<+-> Stronger evidence in favor of the bias through the cost channel.
+  \ei
+  \end{block}
+  }
+}
+
+\frame
+{
+  \ft{Health Care Cost Channel}
+  \uncover<+->{
+  \begin{block}{Interpretation of the Cost channel}
+  \bi
+  \item<+-> Measuring the response in health care decision to an increase in price (slope or elasticity of a demand curve).
+  \item<+-> Author is misinterpreting on interaction term Price*Male.
+  \item<+-> Add together interaction with Price coefficient, response to sons is actually \textit{positive}.
+  \ei
+  \end{block}
+  }
+
+  \uncover<+->{
+  \begin{block}{Endogeneity Problem}
+  \bi
+  \item<+-> Not estimating demand (any more than a supply curve).
+  \item<+-> Need to identify shifters for supply of health care to trace point on demand curve.
+  \item<+-> Instrumental Variable Regression: Identify variables that influence supply to instrument for price.
+  \ei
+  \end{block}
+  }
+}
+
+\frame
+{
+  \ft{Inherent Bias}
+  \bi
+  \item<+-> Besides a difference in response to price, is there a bias against daughters?
+  \item<+-> Interpretation: relative \textit{position} of the demand curve for daughters 
+  \item<+-> Absence of Price*Male interaction in regression equations does not imply an absence of cost.
+  \item<+-> Cannot interpret the regressions in Tables 5, 5a, 6a as response in health care when costs are negligible. 
+  \ei
+}
+
+\frame
+{
+  \ft{Other Comments}
+  \uncover<+->{
+  \begin{block}{Marginal Effects}
+  \bi
+  \item<+-> Question computation/interpretation for a marginal effect with interaction terms.
+  \item<+-> Cross partial marginal effects are tough, see Ai and Norton, Economic Letters, 1993.
+  \item<+-> Are marginal effects of dummy variables computed properly?
+  \ei
+  \end{block}
+  }
+
+  \uncover<+->{
+  \begin{block}{Complex Interactions}
+   Male*Price*Hindu*hprop etc... too complex, of little value.
+  \end{block}
+  }
+}
+
+\end{document}
+

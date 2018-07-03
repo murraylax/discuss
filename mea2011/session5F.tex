@@ -1,0 +1,95 @@
+\documentclass{beamer}
+\usepackage{beamerthemeshadow}
+
+%\documentclass{article}
+%\usepackage{beamerarticle}
+%\usepackage{graphicx}
+
+\usepackage{verbatim}
+%\usepackage{lastpage}
+\usepackage{xcolor}
+\usepackage{pgf}
+\usepackage{colortbl}
+
+\newcommand{\bi}{\begin{itemize}}
+\newcommand{\ei}{\end{itemize}}
+\newcommand{\be}{\begin{enumerate}}
+\newcommand{\ee}{\end{enumerate}}
+\newcommand{\bd}{\begin{description}}
+\newcommand{\ed}{\end{description}}
+\newcommand{\prbf}[1]{\textbf{#1}}
+\newcommand{\prit}[1]{\textit{#1}}
+\newcommand{\beq}{\begin{equation}}
+\newcommand{\eeq}{\end{equation}}
+\newcommand{\bdm}{\begin{displaymath}}
+\newcommand{\edm}{\end{displaymath}}
+
+\newcommand{\ft}[1]{
+  \frametitle{\begin{tabular}{p{4.2in}r} \textcolor{white}{#1} & \small{\insertframenumber / \inserttotalframenumber} \end{tabular}}
+  %\frametitle{#1}
+  \setbeamercovered{transparent=18}
+}
+
+\newcommand{\stepinv}{\setbeamercovered{invisible}}
+\newcommand{\stopinv}{\setbeamercovered{transparent=18}}
+\newcommand{\uncoverinv}[1]
+{
+  \setbeamercovered{invisible}
+  \uncover<+->{#1}
+  \setbeamercovered{transparent=18}
+}
+\newcommand{\ans}[1]{\textcolor{blue}{#1}}
+\newcommand{\ansinv}[1]
+{
+  \setbeamercovered{invisible}
+  \uncover<+->{\textcolor{blue}{#1}}
+  \setbeamercovered{transparent=18}
+}
+\newcommand{\setinv}{\setbeamercovered{invisible}}
+\newcommand{\setvis}{\setbeamercovered{transparent=18}}
+\newcommand{\centerpic}[2]
+{
+  \begin{center}
+  \includegraphics[#1]{#2}
+  \end{center}
+}
+\newcommand{\h}[1]{\hat{#1}}
+\newcommand{\ds}{\displaystyle}
+
+%\definecolor{light}{rgb}{0.17,0.55,0.35}
+\newcommand{\hl}[1]{\alt<#1>{\rowcolor{light}\hspace*{-2.1pt}} {\hspace*{-2.1pt}} }
+
+\definecolor{mycolor}{rgb}{0.52,0.74,0.91}
+\usecolortheme[named=mycolor]{structure}
+
+\begin{document}
+
+\frame[shrink]
+{
+  \frametitle{Session 3A: Methods in Monetary Economies}
+\begin{small}
+\begin{block}{Papers}
+\be
+\item \textbf{Ekaterina Peneva}\\
+``The Timing and the Effects of Monetary Policy Shocks across Sectors'' 
+\item \textbf{Susan Yang} \\
+``Fiscal and Monetary Policy Under Fluctuating Commodity Prices'' 
+\item \textbf{James Murray} \\
+``Learning with Judgment Shocks in U.S. Business Cycles'' 
+\ee
+\end{block}
+
+\begin{block}{Rules}
+  \bi
+  \item Paper presentation: 20 minutes.
+  \item Discussion: 8 minutes.
+  \item Questions from audience: 5 minutes.
+  \item Less time is OK, more is not.
+  \ei
+\end{block}
+\end{small}
+}
+
+
+\end{document}
+

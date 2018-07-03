@@ -1,0 +1,104 @@
+\documentclass{beamer}
+\usepackage{beamerthemeshadow}
+\usepackage{verbatim}
+
+\usepackage{lastpage}
+\usepackage{xcolor}
+\usepackage{pgf}
+\usepackage{colortbl}
+\usepackage{hyperref}
+
+\newcommand{\bi}{\begin{itemize}}
+\newcommand{\ei}{\end{itemize}}
+\newcommand{\be}{\begin{enumerate}}
+\newcommand{\ee}{\end{enumerate}}
+\newcommand{\bd}{\begin{description}}
+\newcommand{\ed}{\end{description}}
+\newcommand{\prbf}[1]{\textbf{#1}}
+\newcommand{\prit}[1]{\textit{#1}}
+\newcommand{\beq}{\begin{equation}}
+\newcommand{\eeq}{\end{equation}}
+\newcommand{\bdm}{\begin{displaymath}}
+\newcommand{\edm}{\end{displaymath}}
+
+\newcommand{\ft}[1]{
+  \frametitle{\begin{tabular}{p{4.2in}r} \textcolor{white}{#1} & \small{\insertframenumber / \inserttotalframenumber} \end{tabular}}
+  \setbeamercovered{transparent=18}
+}
+
+\newcommand{\eft}[1]{
+  \frametitle{\begin{tabular}{p{4in}r} \textcolor{white}{#1} & \small{\hyperlink{f:questions}{\beamergotobutton{GO BACK}}} \end{tabular}}
+  \setbeamercovered{transparent=18}
+}
+
+\newcommand{\stepinv}{\setbeamercovered{invisible}}
+\newcommand{\stopinv}{\setbeamercovered{transparent=18}}
+\newcommand{\uncoverinv}[1]
+{
+  \setbeamercovered{invisible}
+  \uncover<+->{#1}
+  \setbeamercovered{transparent=18}
+}
+\newcommand{\ans}[1]{\textcolor{blue}{#1}}
+\newcommand{\ansinv}[1]
+{
+  \setbeamercovered{invisible}
+  \uncover<+->{\textcolor{blue}{#1}}
+  \setbeamercovered{transparent=18}
+}
+\newcommand{\setinv}{\setbeamercovered{invisible}}
+\newcommand{\setvis}{\setbeamercovered{transparent=18}}
+\newcommand{\centerpic}[2]
+{
+  \begin{center}
+  \includegraphics[#1]{#2}
+  \end{center}
+}
+\newcommand{\h}[1]{\hat{#1}}
+\newcommand{\ds}{\displaystyle}
+
+%\definecolor{light}{rgb}{1.0,0.33,0.33}
+\definecolor{light}{rgb}{1.0,0.5,0.5}
+\newcommand{\hl}[1]{\alt<#1>{\rowcolor{light}\hspace*{-2.1pt}} {\hspace*{-2.1pt}} }
+
+\definecolor{mycolor}{rgb}{0.2,0.6,0.2}
+\usecolortheme[named=mycolor]{structure}
+
+\title[November 16-18, 2012, New Orleans, LA]{Session 09M: International Economics I}
+\author[Southern Economic Association 82nd Annual Conference]{}
+\date{}
+
+\begin{document}
+
+\frame{
+\titlepage
+\vspace*{-1in}\be
+\item \textbf{``Estimating County Level Coincident Indices for the State of Wisconsin''}
+  \begin{small}
+  \bi \item Taggert Brooks*, University of Wisconsin - La Crosse
+      \item Russell Kashian, University of Wisconsin - Whitewater
+  \ei
+  \end{small}
+\item \textbf{``China's Westward Expansion: China's Labor Market Effects from Exports to the United States''}
+  \begin{small}
+  \bi
+  \item Chad Curtis*, University of Richmond
+  \ei
+  \end{small}
+\item \textbf{``Domestic Investment and Aid: The Role of Political Instability''}
+  \begin{small}
+  \bi
+  \item Nabamita Dutta*, University of Wisconsin - La Crosse
+  \item Sanjukta Roy, World Bank Institute
+  \ei
+  \end{small}
+\ee
+* Denotes presenter.
+}
+
+
+
+
+
+\end{document}
+
